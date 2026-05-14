@@ -36,7 +36,7 @@ const siteData = {
         },
         sections: {
           contactTitle: 'Contact and social',
-          contactNote: 'Ways to get in touch',
+          contactNote: 'Get in touch',
           projectsTitle: 'Projects',
           projectsNote: 'Open projects I created',
           librariesTitle: 'Libraries',
