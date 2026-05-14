@@ -95,7 +95,7 @@ const siteData = {
         title: { pt: 'Biblia com IA', en: 'Bible with AI' },
         tag: { pt: 'Site', en: 'Site' },
         description: {
-          pt: 'Projeto que utiliza inteligência artificial para interpretar e explicar passagens bíblicas, oferecendo contextos históricos e aplicação prática',
+          pt: 'Projeto que utiliza inteligência artificial para interpretar e explicar passagens bíblicas, oferecendo contextos históricos e aplicação prática.',
           en: 'A project that uses artificial intelligence to interpret and explain Bible passages, offering historical context and practical application.',
         },
         link: 'https://biblia.leonardogregianin.com/',
@@ -165,7 +165,7 @@ const siteData = {
       },
       {
         title: 'ofx-reader',
-        tag: 'Pascal, Delphi',
+        tag: 'Delphi',
         description: {
           pt: 'Biblioteca para leitura de arquivos OFX (Open Financial Exchange) em Delphi, permitindo a extração de dados financeiros de forma fácil e eficiente.',
           en: 'Library for reading OFX (Open Financial Exchange) files in Delphi, enabling easy and efficient financial data extraction.',
@@ -235,7 +235,7 @@ const siteData = {
       },
       {
         title: 'ACBr',
-        tag: 'Pascal, Delphi',
+        tag: 'Delphi',
         description: {
           pt: 'Componentes para automação comercial, fiscal e contábel em Delphi para integração com sistemas. Contribuições para NF-e, NFC-e e OFX.',
           en: 'Components for commercial, fiscal, and accounting automation in Delphi for system integration. Contributions for NF-e, NFC-e, and OFX.',
@@ -245,7 +245,7 @@ const siteData = {
       },
       {
         title: 'cake',
-        tag: 'Pascal, Delphi',
+        tag: 'Delphi',
         description: {
           pt: 'Backend para envio de WhatsApp e SMS pelo Twilio, com suporte a templates, filas de envio e integração fácil para aplicações Delphi.',
           en: 'Backend for sending WhatsApp and SMS via Twilio, with template support, send queues, and easy integration for Delphi applications.',
