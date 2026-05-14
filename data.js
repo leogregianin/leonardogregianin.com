@@ -154,16 +154,6 @@ const siteData = {
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
-        title: 'stock-exchange-holidays',
-        tag: 'Python',
-        description: {
-          pt: 'Biblioteca para obter feriados de bolsas de valores, fornecendo informações sobre os dias em que as bolsas estão fechadas devido a feriados nacionais ou regionais. Suporte a (NYSE, CME, B3, SSE, JPX)',
-          en: 'Library for retrieving stock exchange holidays, providing information about days when markets are closed due to national or regional holidays. Supports (NYSE, CME, B3, SSE, JPX).',
-        },
-        link: 'https://github.com/leogregianin/stock-exchange-holidays',
-        linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
-      },
-      {
         title: 'django-br-utils',
         tag: 'Python, Django',
         description: {
@@ -185,7 +175,7 @@ const siteData = {
       },
       {
         title: 'django-requestlogs',
-        tag: 'Python',
+        tag: 'Python, Django',
         description: {
           pt: 'Biblioteca para registrar e analisar logs de requisições HTTP em aplicações Django, fornecendo insights sobre o tráfego, desempenho e possíveis erros.',
           en: 'Library for recording and analyzing HTTP request logs in Django applications, providing insights into traffic, performance, and possible errors.',
@@ -247,8 +237,8 @@ const siteData = {
         title: 'ACBr',
         tag: 'Pascal, Delphi',
         description: {
-          pt: 'Biblioteca para automação de tarefas fiscais e contábeis em Delphi, fornecendo componentes e funções para integração com sistemas de emissão de notas fiscais, boletos e outros serviços.',
-          en: 'Library for automating tax and accounting tasks in Delphi, providing components and functions for integration with invoice, boleto, and other service systems.',
+          pt: 'Componentes para automação comercial, fiscal e contábel em Delphi para integração com sistemas. Contribuições para NF-e, NFC-e e OFX.',
+          en: 'Components for commercial, fiscal, and accounting automation in Delphi for system integration. Contributions for NF-e, NFC-e, and OFX.',
         },
         link: 'https://projetoacbr.com.br',
         linkLabel: { pt: 'Abrir site', en: 'Open site' },
