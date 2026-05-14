@@ -203,6 +203,12 @@ h1 {
   margin-bottom: 12px;
 }
 
+.social-icon {
+  display: flex;
+  align-items: center;
+  color: var(--accent);
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
