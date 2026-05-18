@@ -72,8 +72,15 @@ a:hover {
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   line-height: 1;
+}
+
+.brand-name-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .brand-name {
@@ -81,6 +88,13 @@ a:hover {
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.03em;
+}
+
+.brand-verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
 }
 
 .brand-subtitle {
@@ -91,14 +105,6 @@ a:hover {
   letter-spacing: 0;
   color: var(--muted);
   opacity: 0.92;
-}
-
-.brand-mark {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 7px var(--accent-soft);
 }
 
 .nav-links {
