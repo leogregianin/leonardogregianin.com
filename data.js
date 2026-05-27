@@ -85,8 +85,8 @@ const siteData = {
         title: { pt: 'Impressão de Documentos Fiscais', en: 'Fiscal Document Printing' },
         tag: { pt: 'Site', en: 'Site' },
         description: {
-          pt: 'Projeto para conversão de XML em PDF para impressão de documentos fiscais no Brasil (NF-e, CT-e, MDF-e, NFS-e).',
-          en: 'A project that converts XML to PDF for printing fiscal documents in Brazil (NF-e, CT-e, MDF-e, NFS-e).',
+          pt: 'Projeto para conversão de XML em PDF para impressão de documentos fiscais no Brasil (Nota Fiscal, Conhecimento de Transporte, Manifesto de Documentos Fiscais e Nota Fiscal de Serviço). Utiliza background tasks para processamento assíncrono da geração de PDFs.',
+          en: 'A project that converts XML to PDF for printing fiscal documents in Brazil (Nota Fiscal, Conhecimento de Transporte, Manifesto de Documentos Fiscais e Nota Fiscal de Serviço). Uses background tasks for asynchronous PDF generation.',
         },
         link: 'https://dfe.leonardogregianin.com/',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
@@ -117,7 +117,7 @@ const siteData = {
         title: 'PyNFe',
         tag: 'Python',
         description: {
-          pt: 'Projeto de biblioteca para fazer interface com o webservice de Nota Fiscal eletrônica para Python',
+          pt: 'Projeto de biblioteca para fazer interface com o webservice de Nota Fiscal eletrônica para Python.',
           en: 'A library project to interface with the electronic invoice webservice for Python.',
         },
         link: 'https://github.com/TadaSoftware/PyNFe',
@@ -127,7 +127,7 @@ const siteData = {
         title: 'Download NFSe',
         tag: 'Python',
         description: {
-          pt: 'Download de XML da Nota Fiscal de Serviço Eletrônica (NFS-e) recebidas de todo o Brasil para um CPF/CNPJ',
+          pt: 'Download de XML da Nota Fiscal de Serviço Eletrônica (NFS-e) recebidas de todo o Brasil para um CPF/CNPJ.',
           en: 'Downloads XML for Brazilian Electronic Service Invoices (NFS-e) received across Brazil for a CPF/CNPJ.',
         },
         link: 'https://github.com/leogregianin/download_nfse',
