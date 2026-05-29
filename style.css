@@ -6,11 +6,34 @@
   --text: #171717;
   --muted: #5f5f5f;
   --line: rgba(23, 23, 23, 0.12);
+  --line-soft: rgba(23, 23, 23, 0.08);
   --accent: #1f5eff;
   --accent-soft: rgba(31, 94, 255, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.55);
+  --nav-hover-line: rgba(31, 94, 255, 0.3);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --theme-button-bg: rgba(255, 255, 255, 0.6);
   --shadow: 0 20px 60px rgba(17, 24, 39, 0.08);
   --radius: 24px;
   --content-width: 1080px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #10131d;
+  --panel: rgba(20, 24, 37, 0.78);
+  --panel-strong: rgba(24, 29, 44, 0.92);
+  --text: #f2f4f8;
+  --muted: #b8c0d1;
+  --line: rgba(255, 255, 255, 0.14);
+  --line-soft: rgba(255, 255, 255, 0.12);
+  --accent: #78a2ff;
+  --accent-soft: rgba(120, 162, 255, 0.2);
+  --nav-bg: rgba(17, 21, 33, 0.78);
+  --nav-hover-line: rgba(120, 162, 255, 0.5);
+  --card-bg: rgba(18, 23, 36, 0.86);
+  --theme-button-bg: rgba(20, 24, 37, 0.86);
+  --shadow: 0 24px 72px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -27,7 +50,7 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(31, 94, 255, 0.08), transparent 32%),
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 20%, transparent), transparent 32%),
     radial-gradient(circle at right 10%, rgba(255, 122, 89, 0.08), transparent 28%),
     var(--bg);
   line-height: 1.55;
@@ -57,7 +80,7 @@ a:hover {
   margin-bottom: 28px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--nav-bg);
   backdrop-filter: blur(16px);
 }
 
@@ -127,7 +150,7 @@ a:hover {
 .language-button {
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--theme-button-bg);
   color: var(--muted);
   padding: 7px 12px;
   font: inherit;
@@ -139,13 +162,86 @@ a:hover {
 
 .language-button:hover {
   color: var(--text);
-  border-color: rgba(31, 94, 255, 0.3);
+  border-color: var(--nav-hover-line);
 }
 
 .language-button.is-active {
   color: var(--accent);
   background: var(--accent-soft);
   border-color: rgba(31, 94, 255, 0.25);
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--theme-button-bg);
+  color: var(--text);
+  padding: 0;
+  margin-left: 2px;
+  appearance: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 180ms ease, border-color 180ms ease, transform 120ms ease, color 180ms ease;
+}
+
+.theme-toggle:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--theme-button-bg));
+  border-color: var(--nav-hover-line);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 17px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.theme-icon-sun {
+  color: #cc7b00;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-icon-moon {
+  color: #8fa9ff;
+  opacity: 0;
+  transform: scale(0.7) rotate(18deg);
+}
+
+.theme-toggle[aria-pressed='true'] .theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.7) rotate(-18deg);
+}
+
+.theme-toggle[aria-pressed='true'] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+:root[data-theme='dark'] .theme-toggle {
+  color: #dbe6ff;
+}
+
+:root[data-theme='dark'] .theme-toggle:hover {
+  background: color-mix(in srgb, var(--accent) 18%, var(--theme-button-bg));
 }
 
 .hero {
@@ -224,8 +320,8 @@ h1 {
 .card {
   padding: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(23, 23, 23, 0.08);
-  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line-soft);
+  background: var(--card-bg);
   transition: transform 160ms ease, border-color 160ms ease;
 }
 

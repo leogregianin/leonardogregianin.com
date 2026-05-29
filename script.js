@@ -72,6 +72,7 @@ const sections = {
 const brandSubtitle = document.querySelector('.brand-subtitle');
 const footer = document.querySelector('.footer span');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const themeToggleButton = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
 const projectGrid = document.getElementById('projects-grid');
@@ -81,6 +82,40 @@ const socialGrid = document.getElementById('social-grid');
 
 function getCurrentLanguage() {
   return localStorage.getItem('site-language') ?? siteData.defaultLanguage;
+}
+
+function getCurrentTheme() {
+  const savedTheme = localStorage.getItem('site-theme');
+  return savedTheme === 'dark' ? 'dark' : 'light';
+}
+
+function updateThemeButton(language, theme) {
+  if (!themeToggleButton) {
+    return;
+  }
+
+  const labels = {
+    pt: {
+      toDark: 'Ativar dark mode',
+      toLight: 'Ativar modo claro',
+    },
+    en: {
+      toDark: 'Enable dark mode',
+      toLight: 'Enable light mode',
+    },
+  };
+
+  const selectedLabels = labels[language] ?? labels.pt;
+  const isDark = theme === 'dark';
+
+  themeToggleButton.setAttribute('aria-label', isDark ? selectedLabels.toLight : selectedLabels.toDark);
+  themeToggleButton.setAttribute('aria-pressed', String(isDark));
+}
+
+function renderTheme(theme, language = getCurrentLanguage()) {
+  root.setAttribute('data-theme', theme);
+  localStorage.setItem('site-theme', theme);
+  updateThemeButton(language, theme);
 }
 
 function buildCardData(item, language) {
@@ -113,6 +148,7 @@ function renderLanguage(language) {
   sections.articlesTitle.textContent = ui.sections.articlesTitle;
   sections.articlesNote.textContent = ui.sections.articlesNote;
   footer.textContent = ui.footer;
+  updateThemeButton(language, getCurrentTheme());
 
   languageButtons.forEach((button) => {
     button.classList.toggle('is-active', button.dataset.language === language);
@@ -137,6 +173,13 @@ function renderLanguage(language) {
   );
 }
 
+if (themeToggleButton) {
+  themeToggleButton.addEventListener('click', () => {
+    const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+    renderTheme(nextTheme, getCurrentLanguage());
+  });
+}
+
 languageButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const selectedLanguage = button.dataset.language;
@@ -146,3 +189,4 @@ languageButtons.forEach((button) => {
 });
 
 renderLanguage(getCurrentLanguage());
+renderTheme(getCurrentTheme(), getCurrentLanguage());
