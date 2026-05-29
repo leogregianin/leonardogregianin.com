@@ -36,8 +36,53 @@
           <a href="#bibliotecas">Bibliotecas</a>
           <a href="#artigos">Artigos</a>
           <div class="language-switch" role="group" aria-label="Selecionar idioma">
-            <button class="language-button is-active" type="button" data-language="pt">PT</button>
-            <button class="language-button" type="button" data-language="en">EN</button>
+            <button class="language-button is-active" type="button" data-language="pt" aria-label="Português (Brasil)" title="Português (Brasil)">
+              <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 20" role="img" aria-hidden="true">
+                <defs>
+                  <clipPath id="br-flag-clip">
+                    <rect width="28" height="20" rx="2"/>
+                  </clipPath>
+                  <clipPath id="br-globe-clip">
+                    <circle cx="14" cy="10" r="4.3"/>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#br-flag-clip)">
+                  <rect width="28" height="20" fill="#009B3A"/>
+                  <polygon points="14,1.7 25.2,10 14,18.3 2.8,10" fill="#FFDF00"/>
+                  <circle cx="14" cy="10" r="4.3" fill="#002776"/>
+                  <g clip-path="url(#br-globe-clip)">
+                    <path d="M8.7 11.6c1.7-1.4 4.4-2.1 7.5-1.9 2.2.2 4 .8 5.5 1.8" fill="none" stroke="#FFFFFF" stroke-width="1.15" stroke-linecap="round"/>
+                  </g>
+                  <g fill="#FFFFFF">
+                    <circle cx="12.2" cy="8" r="0.34"/>
+                    <circle cx="14.9" cy="7.5" r="0.3"/>
+                    <circle cx="16.6" cy="9" r="0.28"/>
+                    <circle cx="13.8" cy="10.2" r="0.26"/>
+                    <circle cx="11.8" cy="10.8" r="0.24"/>
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button class="language-button" type="button" data-language="en" aria-label="English (United Kingdom)" title="English (United Kingdom)">
+              <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 20" role="img" aria-hidden="true">
+                <defs>
+                  <clipPath id="uk-flag-clip">
+                    <rect width="28" height="20" rx="2"/>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#uk-flag-clip)">
+                  <rect width="28" height="20" fill="#012169"/>
+                  <path d="M0 0h3l25 17v3h-3L0 3z" fill="#FFFFFF"/>
+                  <path d="M28 0v3L3 20H0v-3L25 0z" fill="#FFFFFF"/>
+                  <path d="M0 0h1.5L28 18.4V20h-1.5L0 1.6z" fill="#C8102E"/>
+                  <path d="M28 0h-1.5L0 18.4V20h1.5L28 1.6z" fill="#C8102E"/>
+                  <rect x="11.2" width="5.6" height="20" fill="#FFFFFF"/>
+                  <rect y="7.2" width="28" height="5.6" fill="#FFFFFF"/>
+                  <rect x="12.2" width="3.6" height="20" fill="#C8102E"/>
+                  <rect y="8.2" width="28" height="3.6" fill="#C8102E"/>
+                </g>
+              </svg>
+            </button>
           </div>
           <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Alternar tema">
             <span class="theme-icon theme-icon-sun" aria-hidden="true">

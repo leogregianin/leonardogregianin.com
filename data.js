@@ -63,7 +63,7 @@ const siteData = {
       },
       {
         icon: 'email',
-        title: { pt: 'E-mail', en: 'Email' },
+        title: { pt: 'E-mail', en: 'E-mail' },
         description: {
           pt: 'Contato direto para oportunidades e mensagens.',
           en: 'Direct contact for opportunities and messages.',
@@ -107,8 +107,8 @@ const siteData = {
         title: 'BrazilFiscalReport',
         tag: 'Python',
         description: {
-          pt: 'Biblioteca para geração de Impressão de Documentos Fiscais (NF-e, CT-e, MDF-e, NFS-e) a partir de XML, com suporte a templates personalizáveis e integração fácil.',
-          en: 'Library for generating fiscal document printouts (NF-e, CT-e, MDF-e, NFS-e) from XML, with customizable templates and easy integration.',
+          pt: 'Biblioteca para geração de Impressão de Documentos Fiscais (NF-e, CT-e, MDF-e, NFS-e) a partir de XML.',
+          en: 'Library for generating fiscal document printouts (NF-e, CT-e, MDF-e, NFS-e) from XML.',
         },
         link: 'https://github.com/Engenere/BrazilFiscalReport',
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
