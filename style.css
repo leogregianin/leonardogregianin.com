@@ -207,6 +207,9 @@ a:hover {
 
 .theme-icon {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 17px;
   line-height: 1;
   user-select: none;
@@ -214,9 +217,15 @@ a:hover {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
+.theme-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
 .theme-icon-sun {
-  color: #cc7b00;
-  opacity: 1;
+  color: #d99200;
+  opacity: 0.95;
   transform: scale(1) rotate(0deg);
 }
 
