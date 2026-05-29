@@ -32,8 +32,24 @@ const socialIcons = {
   email: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
 };
 
-function createSocialCard({ title, description, link, icon, linkLabel }) {
+function buildEmailAddress(emailParts) {
+  if (!emailParts) {
+    return '';
+  }
+
+  const { local, domain, tld } = emailParts;
+
+  if (!local || !domain || !tld) {
+    return '';
+  }
+
+  return `${local}@${domain}.${tld}`;
+}
+
+function createSocialCard({ title, description, link, icon, linkLabel, emailParts, revealLabel, hideLabel }) {
   const iconMarkup = socialIcons[icon] ?? '';
+  const isEmail = icon === 'email';
+  const linkAttributes = isEmail ? '' : 'target="_blank" rel="noreferrer"';
   const article = document.createElement('article');
   article.className = 'card';
   article.innerHTML = `
@@ -43,8 +59,10 @@ function createSocialCard({ title, description, link, icon, linkLabel }) {
     </div>
     <h3>${title}</h3>
     <p>${description}</p>
+    ${isEmail ? '<p class="email-display" data-email-output hidden></p>' : ''}
     <div class="card-links">
-      <a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir perfil'}</a>
+      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
+      ${isEmail ? `<a href="#" data-reveal-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}" data-show-label="${revealLabel ?? 'Mostrar email'}" data-hide-label="${hideLabel ?? 'Esconder email'}">${revealLabel ?? 'Mostrar email'}</a>` : ''}
     </div>
   `;
   return article;
@@ -79,6 +97,62 @@ const projectGrid = document.getElementById('projects-grid');
 const librariesGrid = document.getElementById('libraries-grid');
 const articlesGrid = document.getElementById('articles-grid');
 const socialGrid = document.getElementById('social-grid');
+
+socialGrid.addEventListener('click', async (event) => {
+  const copyLink = event.target.closest('a[data-copy-email="true"]');
+  const revealLink = event.target.closest('a[data-reveal-email="true"]');
+
+  if (revealLink) {
+    event.preventDefault();
+
+    const emailAddress = buildEmailAddress({
+      local: revealLink.getAttribute('data-email-local'),
+      domain: revealLink.getAttribute('data-email-domain'),
+      tld: revealLink.getAttribute('data-email-tld'),
+    });
+    const output = revealLink.closest('.card')?.querySelector('[data-email-output]');
+    const showLabel = revealLink.getAttribute('data-show-label') ?? 'Mostrar email';
+    const hideLabel = revealLink.getAttribute('data-hide-label') ?? 'Esconder email';
+
+    if (output) {
+      if (output.hidden) {
+        if (emailAddress) {
+          output.textContent = emailAddress;
+          output.hidden = false;
+          revealLink.textContent = hideLabel;
+        }
+      } else {
+        output.hidden = true;
+        output.textContent = '';
+        revealLink.textContent = showLabel;
+      }
+    }
+
+    return;
+  }
+
+  if (!copyLink) {
+    return;
+  }
+
+  const emailAddress = buildEmailAddress({
+    local: copyLink.getAttribute('data-email-local'),
+    domain: copyLink.getAttribute('data-email-domain'),
+    tld: copyLink.getAttribute('data-email-tld'),
+  });
+
+  if (!emailAddress) {
+    return;
+  }
+
+  event.preventDefault();
+
+  try {
+    await navigator.clipboard.writeText(emailAddress);
+  } catch {
+    window.location.href = `mailto:${emailAddress}`;
+  }
+});
 
 function getCurrentLanguage() {
   return localStorage.getItem('site-language') ?? siteData.defaultLanguage;
@@ -125,6 +199,9 @@ function buildCardData(item, language) {
     description: resolveLocalizedValue(item.description, language),
     link: item.link,
     linkLabel: resolveLocalizedValue(item.linkLabel, language),
+    revealLabel: resolveLocalizedValue(item.revealLabel, language),
+    hideLabel: resolveLocalizedValue(item.hideLabel, language),
+    emailParts: item.emailParts,
     icon: item.icon,
   };
 }
@@ -167,7 +244,7 @@ function renderLanguage(language) {
     socialGrid.appendChild(
       createSocialCard({
         ...buildCardData(social, language),
-        linkLabel: ui.socialLinkLabel,
+        linkLabel: resolveLocalizedValue(social.linkLabel, language) || ui.socialLinkLabel,
       }),
     ),
   );

@@ -68,7 +68,19 @@ const siteData = {
           pt: 'Contato direto para oportunidades e mensagens.',
           en: 'Direct contact for opportunities and messages.',
         },
-        link: 'mailto:leogregianin@gmail.com',
+        link: '#',
+        emailParts: {
+          local: 'leogregianin',
+          domain: 'gmail',
+          tld: 'com',
+        },
+        maskedEmail: {
+          pt: 'leogregianin [at] gmail [dot] com',
+          en: 'leogregianin [at] gmail [dot] com',
+        },
+        linkLabel: { pt: 'Copiar email', en: 'Copy email' },
+        revealLabel: { pt: 'Mostrar email', en: 'Show email' },
+        hideLabel: { pt: 'Esconder email', en: 'Hide email' },
       },
       {
         icon: 'github',

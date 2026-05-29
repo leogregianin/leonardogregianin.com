@@ -410,6 +410,13 @@ h1 {
   color: var(--muted);
 }
 
+.email-display {
+  margin-top: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--text) 80%, var(--muted));
+}
+
 .card-links {
   display: flex;
   gap: 14px;
