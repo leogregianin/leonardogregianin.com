@@ -14,6 +14,8 @@ function createCard({ title, tag, description, link, linkLabel }) {
   return article;
 }
 
+const copyFeedbackTimeouts = new WeakMap();
+
 function resolveLocalizedValue(value, language) {
   if (typeof value === 'string') {
     return value;
@@ -61,7 +63,7 @@ function createSocialCard({ title, description, link, icon, linkLabel, emailPart
     <p>${description}</p>
     ${isEmail ? '<p class="email-display" data-email-output hidden></p>' : ''}
     <div class="card-links">
-      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
+      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-copy-original-label="${linkLabel ?? 'Abrir perfil'}" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
       ${isEmail ? `<a href="#" data-reveal-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}" data-show-label="${revealLabel ?? 'Mostrar email'}" data-hide-label="${hideLabel ?? 'Esconder email'}">${revealLabel ?? 'Mostrar email'}</a>` : ''}
     </div>
   `;
@@ -149,6 +151,23 @@ socialGrid.addEventListener('click', async (event) => {
 
   try {
     await navigator.clipboard.writeText(emailAddress);
+
+    const originalLabel = copyLink.getAttribute('data-copy-original-label') ?? copyLink.textContent ?? '';
+    const copiedLabel = getCurrentLanguage() === 'en' ? '✅ Copied' : '✅ Copiado';
+
+    copyLink.textContent = copiedLabel;
+
+    const previousTimeout = copyFeedbackTimeouts.get(copyLink);
+    if (previousTimeout) {
+      clearTimeout(previousTimeout);
+    }
+
+    const resetTimeout = window.setTimeout(() => {
+      copyLink.textContent = originalLabel;
+      copyFeedbackTimeouts.delete(copyLink);
+    }, 1800);
+
+    copyFeedbackTimeouts.set(copyLink, resetTimeout);
   } catch {
     window.location.href = `mailto:${emailAddress}`;
   }
