@@ -113,6 +113,16 @@ const siteData = {
         link: 'https://biblia.leonardogregianin.com/',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
       },
+      {
+        title: { pt: 'Stock Screener', en: 'Stock Screener' },
+        tag: { pt: 'Site', en: 'Site' },
+        description: {
+          pt: 'Visualização de dados financeiros de ações das bolsas de valores NYSE e NASDAQ. Busca de dados diários de fontes primárias para análise e acompanhamento de ações.',
+          en: 'Financial data visualization for stocks from NYSE and NASDAQ. Daily data fetching from primary sources for stock analysis and tracking.',
+        },
+        link: 'https://stocks.leonardogregianin.com',
+        linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
+      },
     ],
     libraries: [
       {

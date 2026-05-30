@@ -349,7 +349,7 @@ h1 {
 }
 
 .projects {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .libraries {
@@ -453,7 +453,6 @@ h1 {
 }
 
 @media (max-width: 900px) {
-  .projects,
   .libraries,
   .articles,
   .socials {
@@ -493,7 +492,6 @@ h1 {
     flex-direction: column;
   }
 
-  .projects,
   .libraries,
   .articles,
   .socials {
