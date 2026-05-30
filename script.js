@@ -63,8 +63,8 @@ function createSocialCard({ title, description, link, icon, linkLabel, emailPart
     <p>${description}</p>
     ${isEmail ? '<p class="email-display" data-email-output hidden></p>' : ''}
     <div class="card-links">
-      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-copy-original-label="${linkLabel ?? 'Abrir perfil'}" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
       ${isEmail ? `<a href="#" data-reveal-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}" data-show-label="${revealLabel ?? 'Mostrar email'}" data-hide-label="${hideLabel ?? 'Esconder email'}">${revealLabel ?? 'Mostrar email'}</a>` : ''}
+      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-copy-original-label="${linkLabel ?? 'Abrir perfil'}" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
     </div>
   `;
   return article;

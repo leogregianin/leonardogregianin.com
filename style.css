@@ -412,9 +412,20 @@ h1 {
 
 .email-display {
   margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent-soft) 70%, var(--panel-strong));
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.92rem;
   color: color-mix(in srgb, var(--text) 80%, var(--muted));
+}
+
+.email-display[hidden] {
+  display: none !important;
 }
 
 .card-links {
