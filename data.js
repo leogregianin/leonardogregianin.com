@@ -117,8 +117,8 @@ const siteData = {
         title: { pt: 'Stock Screener', en: 'Stock Screener' },
         tag: { pt: 'Site', en: 'Site' },
         description: {
-          pt: 'Visualização de dados financeiros de ações das bolsas de valores NYSE e NASDAQ. Busca de dados diários de fontes primárias para análise e acompanhamento de ações.',
-          en: 'Financial data visualization for stocks from NYSE and NASDAQ. Daily data fetching from primary sources for stock analysis and tracking.',
+          pt: 'Plataforma de monitoramento e inteligência de ações da NYSE e NASDAQ. Transforma dados complexos do mercado em insights claros para ajudar a encontrar oportunidades de investimento com mais rapidez e confiança.',
+          en: 'A platform for monitoring and intelligence of stocks from NYSE and NASDAQ. Transforming complex market data into clear insights to help find investment opportunities more quickly and confidently.',
         },
         link: 'https://stocks.leonardogregianin.com',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
