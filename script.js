@@ -86,6 +86,8 @@ function shuffle(arr) {
 const { socials, projects, libraries, articles } = siteData;
 const languageButtons = document.querySelectorAll('[data-language]');
 const sections = {
+  aboutTitle: document.querySelector('#sobre .section-title'),
+  aboutDescription: document.getElementById('about-description'),
   contactTitle: document.querySelector('#contato .section-title'),
   contactNote: document.querySelector('#contato .section-note'),
   projectsTitle: document.querySelector('#projetos .section-title'),
@@ -97,7 +99,13 @@ const sections = {
 };
 const brandSubtitle = document.querySelector('.brand-subtitle');
 const footer = document.querySelector('.footer span');
-const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navLinks = {
+  about: document.querySelector('.nav-links a[href="#sobre"]'),
+  contact: document.querySelector('.nav-links a[href="#contato"]'),
+  projects: document.querySelector('.nav-links a[href="#projetos"]'),
+  libraries: document.querySelector('.nav-links a[href="#bibliotecas"]'),
+  articles: document.querySelector('.nav-links a[href="#artigos"]'),
+};
 const themeToggleButton = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
@@ -236,11 +244,14 @@ function renderLanguage(language) {
 
   root.lang = language === 'en' ? 'en' : 'pt-BR';
   brandSubtitle.textContent = ui.brandSubtitle;
-  navLinks[0].textContent = ui.nav.contact;
-  navLinks[1].textContent = ui.nav.projects;
-  navLinks[2].textContent = ui.nav.libraries;
-  navLinks[3].textContent = ui.nav.articles;
+  navLinks.about.textContent = ui.nav.about;
+  navLinks.contact.textContent = ui.nav.contact;
+  navLinks.projects.textContent = ui.nav.projects;
+  navLinks.libraries.textContent = ui.nav.libraries;
+  navLinks.articles.textContent = ui.nav.articles;
 
+  sections.aboutTitle.textContent = ui.sections.aboutTitle;
+  sections.aboutDescription.textContent = ui.aboutDescription;
   sections.contactTitle.textContent = ui.sections.contactTitle;
   sections.contactNote.textContent = ui.sections.contactNote;
   sections.projectsTitle.textContent = ui.sections.projectsTitle;
