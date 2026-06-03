@@ -441,6 +441,12 @@ h1 {
   font-weight: 600;
 }
 
+.card-links .card-link-label {
+  color: var(--accent);
+  font-weight: 600;
+  cursor: default;
+}
+
 .footer {
   display: flex;
   justify-content: center;

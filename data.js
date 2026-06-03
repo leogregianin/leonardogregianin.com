@@ -123,6 +123,15 @@ const siteData = {
         link: 'https://stocks.leonardogregianin.com',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
       },
+      {
+        title: { pt: 'CargoPro', en: 'CargoPro' },
+        tag: { pt: 'Site', en: 'Site' },
+        description: {
+          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e gerenciamentos de custos.',
+          en: 'Project for managing carriers with issuing CTe (Electronic Transport Knowledge) and MDFe (Electronic Manifest of Fiscal Documents), plus cost management.',
+        },
+        linkLabel: { pt: 'Confidencial', en: 'Confidential' },
+      },
     ],
     libraries: [
       {

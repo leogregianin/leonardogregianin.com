@@ -1,4 +1,8 @@
 function createCard({ title, tag, description, link, linkLabel }) {
+  const cardLink = link
+    ? `<a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}</a>`
+    : `<span class="card-link-label">${linkLabel ?? ''}</span>`;
+
   const article = document.createElement('article');
   article.className = 'card';
   article.innerHTML = `
@@ -8,7 +12,7 @@ function createCard({ title, tag, description, link, linkLabel }) {
     <h3>${title}</h3>
     <p>${description}</p>
     <div class="card-links">
-      <a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}</a>
+      ${cardLink}
     </div>
   `;
   return article;
