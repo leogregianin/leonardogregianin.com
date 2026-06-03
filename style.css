@@ -75,6 +75,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 12px;
+  z-index: 1000;
   gap: 16px;
   padding: 14px 18px;
   margin-bottom: 28px;
