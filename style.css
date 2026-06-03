@@ -322,6 +322,10 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.section[id] {
+  scroll-margin-top: var(--section-scroll-offset, 110px);
+}
+
 .section-header {
   display: flex;
   align-items: end;

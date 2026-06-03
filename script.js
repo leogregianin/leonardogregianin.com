@@ -108,6 +108,7 @@ const navLinks = {
 };
 const themeToggleButton = document.getElementById('theme-toggle');
 const root = document.documentElement;
+const stickyNav = document.querySelector('.nav');
 
 const projectGrid = document.getElementById('projects-grid');
 const librariesGrid = document.getElementById('libraries-grid');
@@ -239,6 +240,20 @@ function buildCardData(item, language) {
   };
 }
 
+function updateSectionScrollOffset() {
+  if (!stickyNav) {
+    return;
+  }
+
+  const navStyles = window.getComputedStyle(stickyNav);
+  const navTop = parseFloat(navStyles.top) || 0;
+  const navHeight = stickyNav.getBoundingClientRect().height;
+  const breathingRoom = 12;
+  const offset = Math.ceil(navTop + navHeight + breathingRoom);
+
+  root.style.setProperty('--section-scroll-offset', `${offset}px`);
+}
+
 function renderLanguage(language) {
   const ui = siteData.ui[language] ?? siteData.ui[siteData.defaultLanguage];
 
@@ -303,3 +318,6 @@ languageButtons.forEach((button) => {
 
 renderLanguage(getCurrentLanguage());
 renderTheme(getCurrentTheme(), getCurrentLanguage());
+updateSectionScrollOffset();
+
+window.addEventListener('resize', updateSectionScrollOffset);
