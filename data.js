@@ -132,6 +132,15 @@ const siteData = {
         },
         linkLabel: { pt: 'Confidencial', en: 'Confidential' },
       },
+      {
+        title: { pt: 'Automação-NFSe', en: 'NFSe Automation' },
+        tag: { pt: 'Site', en: 'Site' },
+        description: {
+          pt: 'Projeto para automatizar o download de NFSe (Nota Fiscal de Serviço) de todo Brasil de um Escritório Contábil com milhares de clientes.',
+          en: 'Project to automate NFSe (Service Invoice) downloads across Brazil for an Accounting Office with thousands of clients.',
+        },
+        linkLabel: { pt: 'Confidencial', en: 'Confidential' },
+      },
     ],
     libraries: [
       {
