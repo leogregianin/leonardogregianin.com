@@ -1,6 +1,7 @@
 function createCard({ title, tag, description, link, linkLabel }) {
+  const externalLinkIcon = '<span class="external-link-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>';
   const cardLink = link
-    ? `<a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}</a>`
+    ? `<a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}${externalLinkIcon}</a>`
     : `<span class="card-link-label">${linkLabel ?? ''}</span>`;
 
   const article = document.createElement('article');
@@ -54,6 +55,7 @@ function buildEmailAddress(emailParts) {
 
 function createSocialCard({ title, description, link, icon, linkLabel, emailParts, revealLabel, hideLabel }) {
   const iconMarkup = socialIcons[icon] ?? '';
+  const externalLinkIcon = '<span class="external-link-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>';
   const isEmail = icon === 'email';
   const linkAttributes = isEmail ? '' : 'target="_blank" rel="noreferrer"';
   const article = document.createElement('article');
@@ -68,7 +70,7 @@ function createSocialCard({ title, description, link, icon, linkLabel, emailPart
     ${isEmail ? '<p class="email-display" data-email-output hidden></p>' : ''}
     <div class="card-links">
       ${isEmail ? `<a href="#" data-reveal-email="true" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}" data-show-label="${revealLabel ?? 'Mostrar email'}" data-hide-label="${hideLabel ?? 'Esconder email'}">${revealLabel ?? 'Mostrar email'}</a>` : ''}
-      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-copy-original-label="${linkLabel ?? 'Abrir perfil'}" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}</a>
+      <a href="${isEmail ? '#' : link}" ${linkAttributes} ${isEmail ? `data-copy-email="true" data-copy-original-label="${linkLabel ?? 'Abrir perfil'}" data-email-local="${emailParts?.local ?? ''}" data-email-domain="${emailParts?.domain ?? ''}" data-email-tld="${emailParts?.tld ?? ''}"` : ''}>${linkLabel ?? 'Abrir perfil'}${isEmail ? '' : externalLinkIcon}</a>
     </div>
   `;
   return article;
