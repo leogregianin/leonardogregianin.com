@@ -23,7 +23,7 @@ const siteData = {
           articlesNote: 'Artigos escritos no DEV.to e Medium.',
         },
         aboutDescription:
-          'Focado em transformar problemas complexos em produtos digitais: de plataformas para documentos fiscais brasileiros a aplicações com IA e ferramentas de inteligência para o mercado financeiro. Além dos projetos autorais, colaboro com bibliotecas open-source, sempre com foco em utilitários que aceleram integrações reais no dia a dia das empresas combinando visão de produto, engenharia e impacto em escala.',
+          'Transformo problemas complexos em produtos digitais orientados a resultado, conectando estratégia, tecnologia e execução. Lidero iniciativas que vão de plataformas fiscais brasileiras a aplicações com IA e inteligência para o mercado financeiro. Crio e colaboro com projetos open-source para acelerar integrações combinando visão de produto, engenharia e impacto em escala.',
         footer: '2026 Leonardo Gregianin',
         languageLabel: 'Idioma',
         languageShort: 'PT',
@@ -51,7 +51,7 @@ const siteData = {
           articlesNote: 'Articles published on DEV.to and Medium.',
         },
         aboutDescription:
-          'Focused on turning complex problems into digital products: from platforms for Brazilian fiscal documents to AI-powered applications and market-intelligence tools. In addition to my own projects, I contribute to open-source libraries, always with an emphasis on utilities that speed up real integrations in the day-to-day operations of companies, combining product vision, engineering, and scalable impact.',
+          'I transform complex problems into outcome-driven digital products by connecting strategy, technology, and execution. I lead initiatives ranging from Brazilian fiscal platforms to AI-powered applications and market-intelligence tools. I create and collaborate on open-source projects to accelerate integrations by combining product vision, engineering, and impact at scale.',
         footer: '2026 Leonardo Gregianin',
         languageLabel: 'Language',
         languageShort: 'EN',
