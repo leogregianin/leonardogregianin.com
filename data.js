@@ -122,16 +122,6 @@ const siteData = {
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
       },
       {
-        title: { pt: 'Stock Screener', en: 'Stock Screener' },
-        tag: { pt: 'Site', en: 'Site' },
-        description: {
-          pt: 'Plataforma de monitoramento e inteligência de ações da NYSE e NASDAQ. Transforma dados complexos do mercado em insights claros para ajudar a encontrar oportunidades de investimento com mais rapidez e confiança.',
-          en: 'A platform for monitoring and intelligence of stocks from NYSE and NASDAQ. Transforming complex market data into clear insights to help find investment opportunities more quickly and confidently.',
-        },
-        link: 'https://stocks.leonardogregianin.com',
-        linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
-      },
-      {
         title: { pt: 'CargoPro', en: 'CargoPro' },
         tag: { pt: 'Site', en: 'Site' },
         description: {
@@ -141,7 +131,7 @@ const siteData = {
         linkLabel: { pt: 'Confidencial', en: 'Confidential' },
       },
       {
-        title: { pt: 'Automação-NFSe', en: 'NFSe Automation' },
+        title: { pt: 'RobôNFSe', en: 'RobôNFSe' },
         tag: { pt: 'Site', en: 'Site' },
         description: {
           pt: 'Projeto para automatizar o download de NFSe (Nota Fiscal de Serviço) de todo Brasil de um Escritório Contábil com milhares de clientes.',
@@ -169,16 +159,6 @@ const siteData = {
           en: 'A library project to interface with the electronic invoice webservice for Python.',
         },
         link: 'https://github.com/TadaSoftware/PyNFe',
-        linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
-      },
-      {
-        title: 'Download NFSe',
-        tag: 'Python',
-        description: {
-          pt: 'Download de XML da Nota Fiscal de Serviço Eletrônica (NFS-e) recebidas de todo o Brasil para um CPF/CNPJ.',
-          en: 'Downloads XML for Brazilian Electronic Service Invoices (NFS-e) received across Brazil for a CPF/CNPJ.',
-        },
-        link: 'https://github.com/leogregianin/download_nfse',
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
