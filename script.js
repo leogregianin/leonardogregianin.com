@@ -1,14 +1,17 @@
-function createCard({ title, tag, description, link, linkLabel }) {
+function createCard({ title, tag, description, link, linkLabel, image }) {
   const externalLinkIcon = '<span class="external-link-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>';
   const cardLink = link
     ? `<a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}${externalLinkIcon}</a>`
     : `<span class="card-link-label">${linkLabel ?? ''}</span>`;
+  const cardTopContent = image
+    ? `<img class="card-logo" src="${image}" alt="${title}" />`
+    : `<span class="tag">${tag ?? title}</span>`;
 
   const article = document.createElement('article');
   article.className = 'card';
   article.innerHTML = `
     <div class="card-top">
-      <span class="tag">${tag ?? title}</span>
+      ${cardTopContent}
     </div>
     <h3>${title}</h3>
     <p>${description}</p>
@@ -237,6 +240,7 @@ function buildCardData(item, language) {
     hideLabel: resolveLocalizedValue(item.hideLabel, language),
     emailParts: item.emailParts,
     icon: item.icon,
+    image: item.image,
   };
 }
 

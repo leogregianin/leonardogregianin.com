@@ -414,6 +414,14 @@ h1 {
   font-weight: 600;
 }
 
+.card-logo {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
 .card h3 {
   margin: 0 0 8px;
   font-size: 1.05rem;

@@ -104,6 +104,7 @@ const siteData = {
       {
         title: { pt: 'Impressão de Documentos Fiscais', en: 'Fiscal Document Printing' },
         tag: { pt: 'Site', en: 'Site' },
+        image: 'img/dfe.png',
         description: {
           pt: 'Projeto para conversão de XML em PDF para impressão de documentos fiscais no Brasil (Nota Fiscal, Conhecimento de Transporte, Manifesto de Documentos Fiscais e Nota Fiscal de Serviço). Utiliza background tasks para processamento assíncrono da geração de PDFs.',
           en: 'A project that converts XML to PDF for printing fiscal documents in Brazil (Nota Fiscal, Conhecimento de Transporte, Manifesto de Documentos Fiscais e Nota Fiscal de Serviço). Uses background tasks for asynchronous PDF generation.',
@@ -114,6 +115,7 @@ const siteData = {
       {
         title: { pt: 'Biblia com IA', en: 'Bible with AI' },
         tag: { pt: 'Site', en: 'Site' },
+        image: 'img/biblia.png',
         description: {
           pt: 'Projeto que utiliza inteligência artificial para interpretar e explicar passagens bíblicas, oferecendo contextos históricos e aplicação prática.',
           en: 'A project that uses artificial intelligence to interpret and explain Bible passages, offering historical context and practical application.',
@@ -124,18 +126,20 @@ const siteData = {
       {
         title: { pt: 'CargoPro', en: 'CargoPro' },
         tag: { pt: 'Site', en: 'Site' },
+        image: 'img/cargopro.png',
         description: {
-          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e gerenciamentos de custos.',
-          en: 'Project for managing carriers with issuing CTe (Electronic Transport Knowledge) and MDFe (Electronic Manifest of Fiscal Documents), plus cost management.',
+          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e Gerenciamentos de Custos e Apuração de Impostos.',
+          en: 'Project for managing carriers with issuing CTe (Electronic Transport) and MDFe (Electronic Manifest of Fiscal Documents), plus Cost Management and Tax Assessment.',
         },
         linkLabel: { pt: 'Confidencial', en: 'Confidential' },
       },
       {
         title: { pt: 'RobôNFSe', en: 'RobôNFSe' },
         tag: { pt: 'Site', en: 'Site' },
+        image: 'img/robonfse.png',
         description: {
-          pt: 'Projeto para automatizar o download de NFSe (Nota Fiscal de Serviço) de todo Brasil de um Escritório Contábil com milhares de clientes.',
-          en: 'Project to automate NFSe (Service Invoice) downloads across Brazil for an Accounting Office with thousands of clients.',
+          pt: 'Automatizador de download de NFSe (Nota Fiscal de Serviço) de todo Brasil de um Escritório Contábil com milhares de clientes.',
+          en: 'Automate NFSe (Service Invoice) downloads across Brazil for an Accounting Office with thousands of clients.',
         },
         linkLabel: { pt: 'Confidencial', en: 'Confidential' },
       },
