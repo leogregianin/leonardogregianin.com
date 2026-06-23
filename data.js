@@ -134,14 +134,15 @@ const siteData = {
         linkLabel: { pt: 'Confidencial', en: 'Confidential' },
       },
       {
-        title: { pt: 'RobôNFSe', en: 'RobôNFSe' },
+        title: { pt: 'Robô NFSe', en: 'Robô NFSe' },
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/robonfse.png',
         description: {
-          pt: 'Automatizador de download de NFSe (Nota Fiscal de Serviço) de todo Brasil de um Escritório Contábil com milhares de clientes.',
-          en: 'Automate NFSe (Service Invoice) downloads across Brazil for an Accounting Office with thousands of clients.',
+          pt: 'Monitoramento e Download de XML e PDF da NFSe (Nota Fiscal de Serviço) de todo o Brasil. Ideal para Escritórios de Contabilidade com milhares de clientes.',
+          en: 'Monitoring and downloading XML and PDF of NFSe (Service Invoice) from all over Brazil. Ideal for accounting offices with thousands of clients.',
         },
-        linkLabel: { pt: 'Confidencial', en: 'Confidential' },
+        link: 'https://www.robonfse.com.br',
+        linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
       },
     ],
     libraries: [
