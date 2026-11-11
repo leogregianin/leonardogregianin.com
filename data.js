@@ -102,6 +102,27 @@ const siteData = {
     ],
     projects: [
       {
+        title: { pt: 'CargoPro', en: 'CargoPro' },
+        tag: { pt: 'Site', en: 'Site' },
+        image: 'img/cargopro.png',
+        description: {
+          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e Gerenciamentos de Custos, Seguro, Iostos.',
+          en: 'Project for managing carriers with issuing CTe (Electronic Transport) and MDFe (Electronic Manifest of Fiscal Documents), plus Cost Management, Insurance and Tax Assessment.',
+        },
+        linkLabel: { pt: 'Particular', en: 'Private' },
+      },
+      {
+        title: { pt: 'Robô NFSe', en: 'Robô NFSe' },
+        tag: { pt: 'Site', en: 'Site' },
+        image: 'img/robonfse.png',
+        description: {
+          pt: 'Monitoramento e Download de XML e PDF da NFSe (Nota Fiscal de Serviço) de todo o Brasil. Ideal para todos os Escritórios de Contabilidade.',
+          en: 'Monitoring and downloading XML and PDF of NFSe (Service Invoice) from all over Brazil. Ideal for all accounting offices.',
+        },
+        link: 'https://www.robonfse.com.br',
+        linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
+      },
+      {
         title: { pt: 'Impressão de Documentos Fiscais', en: 'Fiscal Document Printing' },
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/dfe.png',
@@ -121,27 +142,6 @@ const siteData = {
           en: 'A project that uses artificial intelligence to interpret and explain Bible passages, offering historical context and practical application.',
         },
         link: 'https://biblia.leonardogregianin.com/',
-        linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
-      },
-      {
-        title: { pt: 'CargoPro', en: 'CargoPro' },
-        tag: { pt: 'Site', en: 'Site' },
-        image: 'img/cargopro.png',
-        description: {
-          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e Gerenciamentos de Custos e Apuração de Impostos.',
-          en: 'Project for managing carriers with issuing CTe (Electronic Transport) and MDFe (Electronic Manifest of Fiscal Documents), plus Cost Management and Tax Assessment.',
-        },
-        linkLabel: { pt: 'Particular', en: 'Private' },
-      },
-      {
-        title: { pt: 'Robô NFSe', en: 'Robô NFSe' },
-        tag: { pt: 'Site', en: 'Site' },
-        image: 'img/robonfse.png',
-        description: {
-          pt: 'Monitoramento e Download de XML e PDF da NFSe (Nota Fiscal de Serviço) de todo o Brasil. Ideal para todos os Escritórios de Contabilidade.',
-          en: 'Monitoring and downloading XML and PDF of NFSe (Service Invoice) from all over Brazil. Ideal for all accounting offices.',
-        },
-        link: 'https://www.robonfse.com.br',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
       },
     ],
