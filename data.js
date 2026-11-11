@@ -106,7 +106,7 @@ const siteData = {
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/cargopro.png',
         description: {
-          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais) e Gerenciamentos de Custos, Seguro, Iostos.',
+          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais), Gerenciamentos de Custos, Seguros e Impostos.',
           en: 'Project for managing carriers with issuing CTe (Electronic Transport) and MDFe (Electronic Manifest of Fiscal Documents), plus Cost Management, Insurance and Tax Assessment.',
         },
         linkLabel: { pt: 'Particular', en: 'Private' },
