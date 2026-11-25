@@ -106,8 +106,8 @@ const siteData = {
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/cargopro.png',
         description: {
-          pt: 'Projeto para Gerenciamento de Transportadoras com emissão de CTe (Conhecimento de Transporte Eletrônico), MDFe (Manifesto Eletrônico de Documentos Fiscais), Gerenciamentos de Custos, Seguros e Impostos.',
-          en: 'Project for managing carriers with issuing CTe (Electronic Transport) and MDFe (Electronic Manifest of Fiscal Documents), plus Cost Management, Insurance and Tax Assessment.',
+          pt: 'Gerenciamento de Transportadoras com emissão de CTe, MDFe, CIOT, Gerenciamentos de Custos, Seguros e Impostos.',
+          en: 'Managing carriers with issuing Electronic Transport and Electronic Manifest of Fiscal Documents, plus Cost Management, Insurance and Tax Assessment.',
         },
         linkLabel: { pt: 'Particular', en: 'Private' },
       },
@@ -116,8 +116,8 @@ const siteData = {
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/robonfse.png',
         description: {
-          pt: 'Monitoramento e Download de XML e PDF da NFSe (Nota Fiscal de Serviço) de todo o Brasil. Ideal para todos os Escritórios de Contabilidade.',
-          en: 'Monitoring and downloading XML and PDF of NFSe (Service Invoice) from all over Brazil. Ideal for all accounting offices.',
+          pt: 'Agente de IA que monitora todas as Notas de Serviço Emitidas e Recebidas dos seus clientes e as envia no e-mail ou integrada a API.',
+          en: 'AI agent that monitors all Service Invoices issued and received by your clients and sends them via email or integrated with an API.',
         },
         link: 'https://www.robonfse.com.br',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
@@ -127,8 +127,8 @@ const siteData = {
         tag: { pt: 'Site', en: 'Site' },
         image: 'img/dfe.png',
         description: {
-          pt: 'Projeto para conversão de XML em PDF para impressão de documentos fiscais no Brasil (NFe, CTe, MDFe, NFSe). Utiliza background tasks para processamento assíncrono da geração de PDFs.',
-          en: 'A project that converts XML to PDF for printing fiscal documents in Brazil (NFe, CTe, MDFe, NFSe). Uses background tasks for asynchronous PDF generation.',
+          pt: 'Projeto para conversão de XML em PDF para impressão de documentos fiscais no Brasil (NFe, CTe, MDFe, NFSe).',
+          en: 'A project that converts XML to PDF for printing fiscal documents in Brazil (NFe, CTe, MDFe, NFSe).',
         },
         link: 'https://dfe.leonardogregianin.com/',
         linkLabel: { pt: 'Abrir Site', en: 'Open Site' },
@@ -207,6 +207,16 @@ const siteData = {
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
+        title: 'openfinance-pluggy-delphi',
+        tag: 'Delphi',
+        description: {
+          pt: 'Componente para integração com Open Finance via Pluggy, permitindo consultar contas, cartões, saldos e transações bancárias.',
+          en: 'Component for Open Finance integration via Pluggy, enabling queries for bank accounts, cards, balances, and transactions.',
+        },
+        link: 'https://github.com/leogregianin/openfinance-pluggy-delphi',
+        linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
+      },
+      {
         title: 'django-requestlogs',
         tag: 'Python, Django',
         description: {
@@ -243,7 +253,7 @@ const siteData = {
           pt: 'API para acessar dados de CNPJ utilizando a base de dados da Receita Federal do Brasil, fornecendo informações detalhadas sobre pessoas físicas e jurídicas.',
           en: 'API for accessing Brazilian CNPJ data using the Federal Revenue database, providing detailed information about individuals and companies.',
         },
-        link: 'https://github.com/leogregianin/minha-receita',
+        link: 'https://github.com/cuducos/minha-receita',
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {

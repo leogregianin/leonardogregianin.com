@@ -414,6 +414,21 @@ h1 {
   font-weight: 600;
 }
 
+.github-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.github-stars svg {
+  width: 14px;
+  height: 14px;
+}
+
 .card-logo {
   height: 32px;
   width: auto;

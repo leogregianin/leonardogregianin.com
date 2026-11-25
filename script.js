@@ -1,4 +1,43 @@
-function createCard({ title, tag, description, link, linkLabel, image }) {
+const githubStarRequests = new Map();
+
+function getGitHubRepo(link) {
+  const match = /^https?:\/\/(?:www\.)?github\.com\/([^/?#]+)\/([^/?#]+)/i.exec(link ?? '');
+  return match ? `${match[1]}/${match[2].replace(/\.git$/, '')}` : null;
+}
+
+function getGitHubStarCount(repo) {
+  const cachedRequest = githubStarRequests.get(repo);
+  if (cachedRequest) {
+    return cachedRequest;
+  }
+
+  const request = fetch(`https://api.github.com/repos/${repo}`, {
+    headers: { Accept: 'application/vnd.github+json' },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`GitHub API returned ${response.status} for ${repo}`);
+      }
+
+      return response.json();
+    })
+    .then((repository) => {
+      if (!Number.isInteger(repository.stargazers_count)) {
+        throw new Error(`GitHub API returned an invalid star count for ${repo}`);
+      }
+
+      return repository.stargazers_count;
+    })
+    .catch((error) => {
+      githubStarRequests.delete(repo);
+      throw error;
+    });
+
+  githubStarRequests.set(repo, request);
+  return request;
+}
+
+function createCard({ title, tag, description, link, linkLabel, image, githubRepo, githubStarsLabel }) {
   const externalLinkIcon = '<span class="external-link-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>';
   const cardLink = link
     ? `<a href="${link}" target="_blank" rel="noreferrer">${linkLabel ?? 'Abrir'}${externalLinkIcon}</a>`
@@ -6,12 +45,19 @@ function createCard({ title, tag, description, link, linkLabel, image }) {
   const cardTopContent = image
     ? `<img class="card-logo" src="${image}" alt="${title}" />`
     : `<span class="tag">${tag ?? title}</span>`;
+  const githubStars = githubRepo
+    ? `<span class="github-stars" data-github-stars aria-label="${githubStarsLabel}: ..." title="${githubStarsLabel}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 17.27 5.18 3.13-1.64-7.03L21 8.64l-7.19-.61L12 1.4 9.19 8.03 2 8.64l5.46 4.73-1.64 7.03L12 17.27z"/></svg>
+        <span data-github-star-count>...</span>
+      </span>`
+    : '';
 
   const article = document.createElement('article');
   article.className = 'card';
   article.innerHTML = `
     <div class="card-top">
       ${cardTopContent}
+      ${githubStars}
     </div>
     <h3>${title}</h3>
     <p>${description}</p>
@@ -19,6 +65,26 @@ function createCard({ title, tag, description, link, linkLabel, image }) {
       ${cardLink}
     </div>
   `;
+
+  if (githubRepo) {
+    const starsBadge = article.querySelector('[data-github-stars]');
+    const starCount = starsBadge.querySelector('[data-github-star-count]');
+
+    getGitHubStarCount(githubRepo)
+      .then((count) => {
+        starCount.textContent = new Intl.NumberFormat(getCurrentLanguage()).format(count);
+        starsBadge.setAttribute('aria-label', `${githubStarsLabel}: ${starCount.textContent}`);
+      })
+      .catch((error) => {
+        console.error(`Unable to load GitHub stars for ${githubRepo}`, error);
+        starCount.textContent = '—';
+        starsBadge.setAttribute(
+          'aria-label',
+          getCurrentLanguage() === 'en' ? 'GitHub stars unavailable' : 'Estrelas no GitHub indisponíveis',
+        );
+      });
+  }
+
   return article;
 }
 
@@ -241,6 +307,8 @@ function buildCardData(item, language) {
     emailParts: item.emailParts,
     icon: item.icon,
     image: item.image,
+    githubRepo: getGitHubRepo(item.link),
+    githubStarsLabel: language === 'en' ? 'GitHub stars' : 'Estrelas no GitHub',
   };
 }
 
