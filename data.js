@@ -154,6 +154,7 @@ const siteData = {
           en: 'Library for generating fiscal document printouts (NF-e, CT-e, MDF-e, NFS-e) from XML.',
         },
         link: 'https://github.com/Engenere/BrazilFiscalReport',
+        stars: 151,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -164,6 +165,7 @@ const siteData = {
           en: 'A library project to interface with the electronic invoice webservice for Python.',
         },
         link: 'https://github.com/TadaSoftware/PyNFe',
+        stars: 599,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -174,6 +176,7 @@ const siteData = {
           en: 'Quickly access zip code information using the Sidecar Pattern to support API queries to ViaCEP, CEPAberto, and Correios.',
         },
         link: 'https://github.com/leogregianin/brcep',
+        stars: 39,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -184,6 +187,7 @@ const siteData = {
           en: 'Library to access Siscomex’s NCM (Mercosur Common Nomenclature) table, providing detailed information about NCM codes, descriptions, and tax classifications.',
         },
         link: 'https://github.com/leogregianin/siscomex-ncm',
+        stars: 26,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -194,6 +198,7 @@ const siteData = {
           en: 'Utilities for Brazilian information and data such as CNPJ, CPF, ZIP code, state, cities, countries, and banks for Django.',
         },
         link: 'https://github.com/leogregianin/django-br-utils',
+        stars: 8,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -204,6 +209,7 @@ const siteData = {
           en: 'Library for reading OFX (Open Financial Exchange) files in Delphi, enabling easy and efficient financial data extraction.',
         },
         link: 'https://github.com/leogregianin/ofx-reader',
+        stars: 70,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -214,6 +220,7 @@ const siteData = {
           en: 'Component for Open Finance integration via Pluggy, enabling queries for bank accounts, cards, balances, and transactions.',
         },
         link: 'https://github.com/leogregianin/openfinance-pluggy-delphi',
+        stars: 0,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -224,6 +231,7 @@ const siteData = {
           en: 'Library for recording and analyzing HTTP request logs in Django applications, providing insights into traffic, performance, and possible errors.',
         },
         link: 'https://github.com/Raekkeri/django-requestlogs',
+        stars: 64,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -234,6 +242,7 @@ const siteData = {
           en: 'Framework for API testing, allowing test scenarios to be defined in YAML files, with support for response validation, authentication, and report generation.',
         },
         link: 'https://github.com/scanapi/scanapi',
+        stars: 1585,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -244,6 +253,7 @@ const siteData = {
           en: 'Library for handling digital certificates in Python, enabling reading and validation of X.509 certificates, plus support for related cryptographic operations.',
         },
         link: 'https://github.com/leogregianin/python-digital-certificate',
+        stars: 18,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -254,6 +264,7 @@ const siteData = {
           en: 'API for accessing Brazilian CNPJ data using the Federal Revenue database, providing detailed information about individuals and companies.',
         },
         link: 'https://github.com/cuducos/minha-receita',
+        stars: 1615,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -264,6 +275,7 @@ const siteData = {
           en: 'Library for automating tasks on wikis, enabling bots for editing, maintenance, and content management on platforms such as Wikipedia.',
         },
         link: 'https://github.com/wikimedia/pywikibot',
+        stars: 781,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -274,6 +286,7 @@ const siteData = {
           en: 'A Python chess game project with computer play at different difficulty levels, game analysis, and a graphical interface for a full chess experience.',
         },
         link: 'https://github.com/pychess/pychess',
+        stars: 818,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -294,6 +307,7 @@ const siteData = {
           en: 'Backend for sending WhatsApp and SMS via Twilio, with template support, send queues, and easy integration for Delphi applications.',
         },
         link: 'https://github.com/leogregianin/cake',
+        stars: 0,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -304,6 +318,7 @@ const siteData = {
           en: 'Library to access the IBGE city table, providing detailed information about Brazilian municipalities, including codes, names, and geographic data.',
         },
         link: 'https://github.com/leogregianin/ibge',
+        stars: 39,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       },
       {
@@ -314,6 +329,7 @@ const siteData = {
           en: 'Hands-on workshop project for learning Kubernetes, featuring a real and complete application.',
         },
         link: 'https://github.com/leogregianin/kubernetes-workshop',
+        stars: 4,
         linkLabel: { pt: 'Abrir repositório', en: 'Open repository' },
       }
     ],
